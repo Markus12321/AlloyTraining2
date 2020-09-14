@@ -1,0 +1,9 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model AlloyTraining.Models.Media.ImageFile
+
+<figure class="well well-small pagination-centered">
+    <img src="@Url.ContentUrl(Model.ContentLink)" alt="@Model.Description" />
+    <figcaption>@Model.Description</figcaption>
+</figure>
