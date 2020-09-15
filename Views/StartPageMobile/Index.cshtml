@@ -1,0 +1,18 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model  AlloyTraining.Models.ViewModels.PageViewModel<AlloyTraining.Models.Pages.StartPage>
+
+<h1 @Html.EditAttributes(m => m.CurrentPage.Heading)>
+    @(Model.CurrentPage.Heading ?? Model.CurrentPage.Heading)
+</h1>
+
+<div>
+    @Html.PropertyFor(m => m.CurrentPage.MainBody)
+</div>
+
+<ul>
+    @foreach (var item in Model.CurrentPage.MainContentArea.FilteredItems)
+    {
+        <li>@Html.ContentLink(item.ContentLink)</li>}
+</ul>

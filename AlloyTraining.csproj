@@ -246,17 +246,22 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Business\DependencyResolvers\StructureMapDependencyResolver.cs" />
+    <Compile Include="Business\DisplayChannels\MobileDisplayChannel.cs" />
     <Compile Include="Business\ExtensionMethods\ContentExtensions.cs" />
     <Compile Include="Business\ExtensionMethods\HtmlHelperExtensions.cs" />
     <Compile Include="Business\ExtensionMethods\MiscExtensions.cs" />
     <Compile Include="Business\ExtensionMethods\SectionExtensionMethods.cs" />
+    <Compile Include="Business\Initialization\DisplayOptionsInitializationModule.cs" />
     <Compile Include="Business\Initialization\RegisterAdminInitializationModule.cs" />
     <Compile Include="Business\Initialization\RegisterDependencyResolverInitializationModule.cs" />
     <Compile Include="Business\SelectionFactories\ThemeSelectionFactory.cs" />
+    <Compile Include="Controllers\AllPagesPartialController.cs" />
+    <Compile Include="Controllers\ContentFolderController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\ProductPagePartialController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
+    <Compile Include="Controllers\StartPageMobileController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -269,12 +274,14 @@
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StandardPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\ViewModels\ContentFolderViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiteContentIcons.cs" />
     <Compile Include="SiteGroupNames.cs" />
     <Compile Include="SiteTabNames.cs" />
+    <Compile Include="SiteTags.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Blocks\" />
@@ -298,8 +305,12 @@
     <Content Include="App_Data\EPiServerDB_22e17c1f_log.ldf">
       <DependentUpon>EPiServerDB_22e17c1f.mdf</DependentUpon>
     </Content>
+    <Content Include="ClientResources\iPhone4\device-320x480.png" />
+    <Content Include="ClientResources\iPhone4\iPhone4.css" />
     <Content Include="IndexingService\IndexingService.svc" />
     <Content Include="modules\_protected\EPiServer.Search.Cms\IndexContent.aspx" />
+    <Content Include="Resources\DisplayChannels.xml" />
+    <Content Include="Resources\DisplayOptions.xml" />
     <Content Include="Static\contenticons\epi-edu-icon-block.jpg" />
     <Content Include="Static\contenticons\epi-edu-icon-commerce.jpg" />
     <Content Include="Static\contenticons\epi-edu-icon-container.jpg" />
@@ -369,8 +380,9 @@
     <Content Include="modules\_protected\CMS\CMS.zip" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\web.config" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\EPiServer.Cms.TinyMce.zip" />
+    <Content Include="module.config" />
     <None Include="packages.config" />
-    <Content Include="Views\StartPage\Index.cshtml" />
+    <Content Include="Views\StartPageMobile\Index.cshtml" />
     <Content Include="Views\Shared\Layouts\_Root.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Layouts\_LeftNavigation.cshtml" />
@@ -381,6 +393,11 @@
     <Content Include="Views\ProductPagePartial\Index.cshtml" />
     <Content Include="Views\Shared\ImageFile.cshtml" />
     <Content Include="Views\Shared\PdfFile.cshtml" />
+    <Content Include="Views\ContentFolder\Index.cshtml" />
+    <Content Include="Views\Shared\Full.cshtml" />
+    <Content Include="Views\Shared\Wide.cshtml" />
+    <Content Include="Views\Shared\Narrow.cshtml" />
+    <Content Include="Views\StartPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

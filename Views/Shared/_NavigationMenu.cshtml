@@ -19,7 +19,7 @@
         {<a href="/en/logout">Log out @User.Identity.Name</a>
     }
     else
-    { <a href="@FormsAuthentication.LoginUrl?ReturnUrl= @Model.CurrentPage.PageLink.ExternalURLFromReference()">Log in</a>
+    { <a href="@FormsAuthentication.LoginUrl?ReturnUrl=@Model.CurrentPage.PageLink.ExternalURLFromReference()">Log in</a>
     }
     </li>
 </ul>
