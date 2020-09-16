@@ -10,7 +10,9 @@
     <title>@(Model.CurrentPage.MetaTitle ?? Model.CurrentPage.Name)</title>
     <meta name="keywords" content="@Model.CurrentPage.MetaKeywords" />
     <meta name="description" content="@Model.CurrentPage.MetaDescription" />
+    @* Esnures that there is only one link to the site? *@
     @Html.CanonicalLink()
+    @* links to alternate languages for the page *@
     @Html.AlternateLinks()
     <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap.css")" />
     <link rel="stylesheet"
